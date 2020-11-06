@@ -9,7 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
+        Button("Open Video Capture The Moment", action: {
+            print("open")
+            let url: URL = URL(string: "VideoCTM://code/123456789")!
+            UIApplication.shared.open(url, options: [:]) { success in
+                NSLog("VideoCaptureOpener should open \(url)")
+            }
+        })
             .padding()
     }
 }
